@@ -1,7 +1,8 @@
 body {
   background-color: black;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto Mono", monospace;
+  padding-top: 80px;
 }
 
 ul {
@@ -11,11 +12,17 @@ ul {
 }
 
 .header {
+  position: fixed; /* fixes the navbar on scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
   padding: 5px 15px;
+  box-sizing: border-box; /* prevents overflow caused by padding */
+  background: black; /* needed so content below doesn't show through */
 }
 
 .navbar {
-  background: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,15 +44,11 @@ ul {
   text-decoration: none;
   padding: 8px 20px;
   font-size: 14px;
+  font-family: "Roboto Mono", monospace;
 }
 
 .nav-items li a:hover {
   color: rgb(171, 171, 171);
-}
-
-.nav-items li a,
-cta-btn {
-  font-family: "Roboto Mono", monospace;
 }
 
 /* Dropdown Menus */
@@ -55,7 +58,7 @@ cta-btn {
   top: 100%;
   left: 0;
   min-width: 160px;
-  background: 1a1a3e;
+  background: black; /* fixed missing # */
   border-radius: 10px;
   overflow: hidden;
   z-index: 1000;
@@ -94,4 +97,58 @@ cta-btn {
 
 .logo img:hover {
   transform: rotate(90deg);
+}
+
+.title-section h1 {
+  font-family: "Special Gothic Expanded One", cursive;
+  font-size: 13vw;
+  color: rgb(228, 228, 228);
+  margin: 80px 70px;
+  line-height: 0.43;
+}
+
+.title-section p {
+  font-size: 3vw;
+  color: white;
+  margin: 90px 70px -25px;
+  line-height: 1;
+}
+
+.text-contents p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 17px;
+  color: rgb(186, 186, 186);
+  margin: 120px 10px;
+  width: 94%;
+  margin-left: 5%;
+  position: relative;
+  max-width: 50%;
+}
+
+.scroll-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  padding-top: 70px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.scroll-btn .material-symbols-outlined {
+  font-size: 30px;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 10px;
+  transition: background 0.3s, color 0.3s ease;
+}
+
+.scroll-btn:hover .material-symbols-outlined {
+  background: #ffffff;
+  color: black;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
