@@ -17,7 +17,7 @@ ul {
   left: 0;
   width: 100%;
   z-index: 9999;
-  padding: 5px 15px;
+  padding: 5px 40px;
   box-sizing: border-box; /* prevents overflow caused by padding */
   background: black; /* needed so content below doesn't show through */
 }
@@ -31,7 +31,7 @@ ul {
 
 .nav-items {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   margin-left: auto;
 }
 
@@ -80,6 +80,20 @@ ul {
   padding: 14px 0 15px 0;
 }
 
+.dropdown-finals {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 265px;
+  background: black;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1000;
+  margin: 20px -5px;
+  padding: 10px 0 15px 0;
+}
+
 .nav-items li ul li a {
   display: block;
   padding: 7px 16px 5px;
@@ -101,7 +115,8 @@ ul {
 }
 
 .nav-items li.open > .dropdown-activities,
-.nav-items li.open > .dropdown-installations {
+.nav-items li.open > .dropdown-installations,
+.nav-items li.open > .dropdown-finals {
   display: block;
 }
 
@@ -145,7 +160,7 @@ ul {
   font-size: 13vw;
   color: rgb(228, 228, 228);
   margin: 80px 70px;
-  line-height: 0.43;
+  line-height: 0.41;
 }
 
 .title-section p {
